@@ -1,0 +1,78 @@
+<form [formGroup]="shipmentForm" (ngSubmit)="onSubmit()">
+  <div class="p-fluid">
+    <div class="field">
+      <label for="packageId">Package ID</label>
+      <input id="packageId" type="text" pInputText formControlName="packageId" />
+    </div>
+  </div>
+  <div class="flex flex-row-reverse flex-wrap">
+    <button
+      pButton
+      type="button"
+      label="Cancel"
+      class="p-button-danger justify-content-center"
+      (click)="onCancel()"
+    ></button>
+    <button
+      pButton
+      type="submit"
+      label="Get Details"
+      class="mr-2 p-button-success justify-content-center"
+      [disabled]="loading"
+    ></button>
+  </div>
+</form>
+
+<div *ngIf="shipment" class="mt-4">
+  <h3>Shipment Details</h3>
+  <div class="p-fluid">
+    <div class="field">
+      <label for="sender">Sender</label>
+      <input id="sender" type="text" pInputText [value]="shipment.sender" disabled />
+    </div>
+    <div class="field">
+      <label for="receiver">Receiver</label>
+      <input id="receiver" type="text" pInputText [value]="shipment.receiver" disabled />
+    </div>
+    <div class="field">
+      <label for="packageName">Package Name</label>
+      <input id="packageName" type="text" pInputText [value]="shipment.packageName" disabled />
+    </div>
+    <div class="field">
+      <label for="pickupTime">Pickup Time</label>
+      <input
+        id="pickupTime"
+        type="text"
+        pInputText
+        [value]="shipment.pickupTime | date: 'medium'"
+        disabled
+      />
+    </div>
+    <div class="field">
+      <label for="deliveryTime">Delivery Time</label>
+      <input
+        id="deliveryTime"
+        type="text"
+        pInputText
+        [value]="shipment.deliveryTime ? (shipment.deliveryTime | date: 'medium') : 'N/A'"
+        disabled
+      />
+    </div>
+    <div class="field">
+      <label for="distance">Distance (km)</label>
+      <input id="distance" type="text" pInputText [value]="shipment.distance" disabled />
+    </div>
+    <div class="field">
+      <label for="price">Price (ETH)</label>
+      <input id="price" type="text" pInputText [value]="shipment.price" disabled />
+    </div>
+    <div class="field">
+      <label for="status">Status</label>
+      <input id="status" type="text" pInputText [value]="shipment.status" disabled />
+    </div>
+    <div class="field">
+      <label for="isPaid">Paid</label>
+      <input id="isPaid" type="text" pInputText [value]="shipment.isPaid ? 'Yes' : 'No'" disabled />
+    </div>
+  </div>
+</div>

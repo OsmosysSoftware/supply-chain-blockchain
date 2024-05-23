@@ -1,0 +1,19 @@
+<div class="m-2">
+  <button
+    *ngIf="!account"
+    pButton
+    type="button"
+    label="Connect to Wallet"
+    (click)="connectWallet()"
+  ></button>
+  <div *ngIf="account" class="m-2">
+    <div class="flex align-items-center">
+      <span class="mr-2"
+        >Connected as: <strong>{{ account }}</strong></span
+      >
+      <span *ngIf="balance"
+        >Balance: <strong>{{ balance }} ETH</strong></span
+      >
+    </div>
+  </div>
+</div>

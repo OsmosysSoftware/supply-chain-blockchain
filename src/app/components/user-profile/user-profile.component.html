@@ -1,0 +1,35 @@
+<div *ngIf="currentAccount; else notConnected">
+  <h3>User Profile</h3>
+  <div class="p-fluid">
+    <div class="field">
+      <label for="account">Account Address</label>
+      <input id="account" type="text" pInputText [value]="currentAccount" disabled />
+    </div>
+    <div class="field">
+      <label for="balance">Balance (ETH)</label>
+      <input id="balance" type="text" pInputText [value]="balance" disabled />
+    </div>
+    <div class="field">
+      <label for="networkId">Network ID</label>
+      <input id="networkId" type="text" pInputText [value]="networkId" disabled />
+    </div>
+    <div class="field">
+      <label for="networkName">Network Name</label>
+      <input id="networkName" type="text" pInputText [value]="networkName" disabled />
+    </div>
+    <div class="field">
+      <label for="shipmentCount">Number of Shipments</label>
+      <input id="shipmentCount" type="text" pInputText [value]="shipmentCount" disabled />
+    </div>
+    <div class="field text-center">
+      <p-progressSpinner *ngIf="loading"></p-progressSpinner>
+    </div>
+    <!-- Add more user profile details here if needed -->
+  </div>
+</div>
+
+<ng-template #notConnected>
+  <div class="text-center">
+    <p>No wallet connected. Please connect your wallet to view profile details.</p>
+  </div>
+</ng-template>

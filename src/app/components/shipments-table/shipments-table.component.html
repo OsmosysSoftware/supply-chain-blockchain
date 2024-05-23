@@ -1,0 +1,72 @@
+<p-table [value]="shipments" responsiveLayout="scroll" [resizableColumns]="true">
+  <ng-template pTemplate="caption">
+    <div class="flex align-items-center justify-content-between">
+      Shipments
+      <p-button icon="pi pi-refresh" (onClick)="getShipmentList()" [loading]="loading" />
+    </div>
+  </ng-template>
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Shipment ID</th>
+      <th>Sender</th>
+      <th>Receiver</th>
+      <th>Package Name</th>
+      <th>Pickup Time</th>
+      <th>Delivery Time</th>
+      <th>Distance (km)</th>
+      <th>Price (ETH)</th>
+      <th>Status</th>
+      <th>Paid</th>
+      <th>Actions</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-shipment let-i="rowIndex">
+    <tr>
+      <td>{{ shipment.packageId }}</td>
+      <td>{{ shipment.sender }}</td>
+      <td>{{ shipment.receiver }}</td>
+      <td>{{ shipment.packageName }}</td>
+      <td>{{ shipment.pickupTime | date: 'medium' }}</td>
+      <td>{{ shipment.deliveryTime ? (shipment.deliveryTime | date: 'medium') : 'N/A' }}</td>
+      <td>{{ shipment.distance }}</td>
+      <td>{{ shipment.price }}</td>
+      <td>
+        <p-tag [value]="shipment.status" [severity]="getStatusSeverity(shipment.status)"></p-tag>
+      </td>
+      <td>
+        <p-tag
+          [value]="shipment.isPaid ? 'Yes' : 'No'"
+          [severity]="getPaidSeverity(shipment.isPaid)"
+        ></p-tag>
+      </td>
+      <td>
+        <ng-container *ngIf="shipment.status === 'Pending'">
+          <p-button
+            label="Start"
+            icon="pi pi-play"
+            (onClick)="startShipment(shipment.packageId)"
+            class="p-button-success p-button-sm"
+            [disabled]="loading"
+          ></p-button>
+        </ng-container>
+        <ng-container *ngIf="shipment.status === 'In Transit'">
+          <p-button
+            label="Complete"
+            icon="pi pi-check"
+            (onClick)="completeShipment(shipment.packageId)"
+            class="p-button-info p-button-sm"
+            [disabled]="loading"
+          ></p-button>
+        </ng-container>
+        <ng-container *ngIf="shipment.status === 'Delivered'">
+          <span class="text-2xl">🤝</span>
+        </ng-container>
+      </td>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="emptymessage">
+    <tr>
+      <td colspan="11" class="text-center text-xl surface-overlay">No Data Found</td>
+    </tr>
+  </ng-template>
+</p-table>

@@ -1,0 +1,70 @@
+<p-toast></p-toast>
+<app-wallet></app-wallet>
+
+<div class="grid justify-center mt-4">
+  <div class="col p-fluid">
+    <p-button
+      label="Add Tracking"
+      (click)="showDialog('addTracking')"
+      [raised]="true"
+      [disabled]="!currentAccount"
+      severity="contrast"
+      size="large"
+    ></p-button>
+  </div>
+  <div class="col p-fluid">
+    <p-button
+      label="Get Shipment Details"
+      (click)="showDialog('getShipmentDetails')"
+      [raised]="true"
+      severity="contrast"
+      size="large"
+    ></p-button>
+  </div>
+  <div class="col p-fluid">
+    <p-button
+      label="User Profile"
+      (click)="showDialog('userProfile')"
+      [raised]="true"
+      [disabled]="!currentAccount"
+      severity="contrast"
+      size="large"
+    ></p-button>
+  </div>
+</div>
+<p-dialog
+  header="Add Tracking"
+  [(visible)]="displayAddTracking"
+  [modal]="true"
+  [closable]="true"
+  [style]="{ width: '50vw' }"
+>
+  <app-add-tracking (closeDialog)="displayAddTracking = false"></app-add-tracking>
+</p-dialog>
+
+<p-dialog
+  header="Get Shipment Details"
+  [(visible)]="displayGetShipmentDetails"
+  [modal]="true"
+  [closable]="true"
+  [style]="{ width: '50vw' }"
+>
+  <app-get-shipment-details
+    (closeDialog)="displayGetShipmentDetails = false"
+  ></app-get-shipment-details>
+</p-dialog>
+
+<p-dialog
+  header="User Profile"
+  [(visible)]="displayUserProfile"
+  [modal]="true"
+  [closable]="true"
+  [style]="{ width: '50vw' }"
+>
+  <app-user-profile
+    *ngIf="displayUserProfile"
+    (closeDialog)="displayUserProfile = false"
+  ></app-user-profile>
+</p-dialog>
+
+<app-shipments-table></app-shipments-table>

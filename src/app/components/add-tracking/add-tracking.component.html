@@ -1,0 +1,130 @@
+<form [formGroup]="trackingForm" (ngSubmit)="onSubmit()">
+  <div class="p-fluid">
+    <div class="field">
+      <label for="sender">Sender</label>
+      <input id="sender" type="text" pInputText [value]="sender" disabled />
+    </div>
+    <div class="field">
+      <label for="packageName">Package Name</label>
+      <input
+        id="packageName"
+        type="text"
+        pInputText
+        formControlName="packageName"
+        [ngClass]="{
+          'ng-invalid ng-dirty':
+            trackingForm.controls['packageName'].invalid &&
+            trackingForm.controls['packageName'].touched
+        }"
+      />
+      <div
+        *ngIf="
+          trackingForm.controls['packageName'].invalid &&
+          trackingForm.controls['packageName'].touched
+        "
+        class="p-error"
+      >
+        Package Name is required
+      </div>
+    </div>
+    <div class="field">
+      <label for="receiver">Receiver</label>
+      <input
+        id="receiver"
+        type="text"
+        pInputText
+        formControlName="receiver"
+        [ngClass]="{
+          'ng-invalid ng-dirty':
+            trackingForm.controls['receiver'].invalid && trackingForm.controls['receiver'].touched
+        }"
+      />
+      <div
+        *ngIf="
+          trackingForm.controls['receiver'].invalid && trackingForm.controls['receiver'].touched
+        "
+        class="p-error"
+      >
+        Receiver is required
+      </div>
+    </div>
+    <div class="field">
+      <label for="distance">Distance (km)</label>
+      <input
+        id="distance"
+        type="number"
+        pInputText
+        formControlName="distance"
+        [ngClass]="{
+          'ng-invalid ng-dirty':
+            trackingForm.controls['distance'].invalid && trackingForm.controls['distance'].touched
+        }"
+      />
+      <div
+        *ngIf="
+          trackingForm.controls['distance'].invalid && trackingForm.controls['distance'].touched
+        "
+        class="p-error"
+      >
+        Distance is required and must be greater than 0
+      </div>
+    </div>
+    <div class="field">
+      <label for="price">Price (ETH)</label>
+      <input
+        id="price"
+        type="number"
+        pInputText
+        formControlName="price"
+        [ngClass]="{
+          'ng-invalid ng-dirty':
+            trackingForm.controls['price'].invalid && trackingForm.controls['price'].touched
+        }"
+      />
+      <div
+        *ngIf="trackingForm.controls['price'].invalid && trackingForm.controls['price'].touched"
+        class="p-error"
+      >
+        Price is required and must be greater than 0
+      </div>
+    </div>
+    <div class="field">
+      <label for="packageId">Package ID</label>
+      <input
+        id="packageId"
+        type="text"
+        pInputText
+        formControlName="packageId"
+        [ngClass]="{
+          'ng-invalid ng-dirty':
+            trackingForm.controls['packageId'].invalid && trackingForm.controls['packageId'].touched
+        }"
+      />
+      <div
+        *ngIf="
+          trackingForm.controls['packageId'].invalid && trackingForm.controls['packageId'].touched
+        "
+        class="p-error"
+      >
+        Package ID is required
+      </div>
+    </div>
+  </div>
+  <div class="flex flex-row-reverse flex-wrap">
+    <button
+      pButton
+      type="button"
+      label="Cancel"
+      class="p-button-danger justify-content-center"
+      (click)="onCancel()"
+      [disabled]="loading"
+    ></button>
+    <button
+      pButton
+      type="submit"
+      [loading]="loading"
+      label="Add"
+      class="mr-2 p-button-success justify-content-center"
+    ></button>
+  </div>
+</form>

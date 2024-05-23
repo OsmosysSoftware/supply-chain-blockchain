@@ -1,0 +1,11 @@
+services:
+  osmosys-supply-chain-demo:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        APP_NAME: osmosys-supply-chain-demo
+    image: osmosys-supply-chain-demo
+    container_name: osmosys-supply-chain-demo
+    ports:
+      - '127.0.0.1:${SERVER_PORT}:80'
