@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { Subscription } from 'rxjs';
 import { TrackingService } from '../../services/tracking.service';
 import { ShipmentCommunicationService } from '../../services/shipment-communication.service';
 import { Shipment } from '../shipment.interface';
+import { Web3Service } from '../../services/web3.service';
 
 @Component({
   selector: 'app-shipments-table',
@@ -17,24 +18,45 @@ export class ShipmentsTableComponent implements OnInit {
 
   private shipmentAddedSubscription: Subscription;
 
+  private accountSubscription: Subscription;
+
   constructor(
     private trackingService: TrackingService,
     private messageService: MessageService,
     private shipmentCommunicationService: ShipmentCommunicationService,
+    private web3Service: Web3Service,
+    private cdr: ChangeDetectorRef,
   ) {
     this.shipmentAddedSubscription = this.shipmentCommunicationService.shipmentAdded$.subscribe(
       () => {
         this.getShipmentList();
       },
     );
+
+    this.accountSubscription = this.web3Service.accountsChanged.subscribe(() => {
+      this.getShipmentList();
+    });
   }
 
   async ngOnInit(): Promise<void> {
-    this.shipments = await this.trackingService.getAllShipments();
+    this.getShipmentList();
   }
 
   async getShipmentList() {
-    this.shipments = await this.trackingService.getAllShipments();
+    try {
+      this.loading = true;
+      this.shipments = await this.trackingService.getShipmentsByAddress();
+    } catch (error) {
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Error',
+        detail: 'Error fetching shipments',
+      });
+      console.error('Error fetching shipments', error);
+    } finally {
+      this.loading = false;
+      this.cdr.detectChanges();
+    }
   }
 
   async startShipment(id: string) {

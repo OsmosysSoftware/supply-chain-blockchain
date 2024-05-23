@@ -96,4 +96,23 @@ contract Tracking {
     function getShipmentsCount(address _sender) public view returns (uint256) {
         return shipmentCounts[_sender];
     }
+
+    function getShipmentsByAddress(address _address) public view returns (Shipment[] memory) {
+        uint count = 0;
+        for (uint i = 0; i < shipmentIds.length; i++) {
+            if (shipments[shipmentIds[i]].sender == _address || shipments[shipmentIds[i]].receiver == _address) {
+                count++;
+            }
+        }
+
+        Shipment[] memory result = new Shipment[](count);
+        uint index = 0;
+        for (uint i = 0; i < shipmentIds.length; i++) {
+            if (shipments[shipmentIds[i]].sender == _address || shipments[shipmentIds[i]].receiver == _address) {
+                result[index] = shipments[shipmentIds[i]];
+                index++;
+            }
+        }
+        return result;
+    }
 }
