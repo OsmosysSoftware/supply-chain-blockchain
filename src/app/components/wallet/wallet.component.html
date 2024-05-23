@@ -1,0 +1,12 @@
+<div class="m-2">
+  <button
+    *ngIf="!account"
+    pButton
+    type="button"
+    label="Connect to Wallet"
+    (click)="connectWallet()"
+  ></button>
+  <div *ngIf="account" class="m-2">
+    Connected as: <strong>{{ account }}</strong>
+  </div>
+</div>
