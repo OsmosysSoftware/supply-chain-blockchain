@@ -4,7 +4,7 @@ import Web3 from 'web3';
 import { RegisteredSubscription } from 'web3/lib/commonjs/eth.exports';
 import { MessageService } from 'primeng/api';
 import { Web3Service } from './web3.service';
-import TrackingABI from '../../../artifacts/contracts/Tracking.sol/Tracking.json'; // Ensure this path is correct
+import TrackingABI from '../../common/Tracking.json'; // Ensure this path is correct
 import { environment } from '../../environments/environment';
 import { Shipment } from '../components/shipment.interface';
 
