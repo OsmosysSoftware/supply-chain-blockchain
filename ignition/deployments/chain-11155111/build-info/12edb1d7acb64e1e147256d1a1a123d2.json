@@ -18,16 +18,8 @@
       },
       "outputSelection": {
         "*": {
-          "*": [
-            "abi",
-            "evm.bytecode",
-            "evm.deployedBytecode",
-            "evm.methodIdentifiers",
-            "metadata"
-          ],
-          "": [
-            "ast"
-          ]
+          "*": ["abi", "evm.bytecode", "evm.deployedBytecode", "evm.methodIdentifiers", "metadata"],
+          "": ["ast"]
         }
       }
     }
@@ -38,9 +30,7 @@
         "ast": {
           "absolutePath": "contracts/Tracking.sol",
           "exportedSymbols": {
-            "Tracking": [
-              514
-            ]
+            "Tracking": [514]
           },
           "id": 515,
           "license": "MIT",
@@ -48,12 +38,7 @@
           "nodes": [
             {
               "id": 1,
-              "literals": [
-                "solidity",
-                "^",
-                "0.8",
-                ".24"
-              ],
+              "literals": ["solidity", "^", "0.8", ".24"],
               "nodeType": "PragmaDirective",
               "src": "32:24:0"
             },
@@ -65,9 +50,7 @@
               "contractKind": "contract",
               "fullyImplemented": true,
               "id": 514,
-              "linearizedBaseContracts": [
-                514
-              ],
+              "linearizedBaseContracts": [514],
               "name": "Tracking",
               "nameLocation": "67:8:0",
               "nodeType": "ContractDefinition",
@@ -346,9 +329,7 @@
                         "pathNode": {
                           "id": 22,
                           "name": "ShipmentStatus",
-                          "nameLocations": [
-                            "379:14:0"
-                          ],
+                          "nameLocations": ["379:14:0"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 5,
                           "src": "379:14:0"
@@ -441,9 +422,7 @@
                       "pathNode": {
                         "id": 29,
                         "name": "Shipment",
-                        "nameLocations": [
-                          "452:8:0"
-                        ],
+                        "nameLocations": ["452:8:0"],
                         "nodeType": "IdentifierPath",
                         "referencedDeclaration": 27,
                         "src": "452:8:0"
@@ -1219,10 +1198,7 @@
                             "id": 96,
                             "name": "require",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -18,
-                              -18
-                            ],
+                            "overloadedDeclarations": [-18, -18],
                             "referencedDeclaration": -18,
                             "src": "1223:7:0",
                             "typeDescriptions": {
@@ -1416,10 +1392,7 @@
                             "id": 104,
                             "name": "require",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -18,
-                              -18
-                            ],
+                            "overloadedDeclarations": [-18, -18],
                             "referencedDeclaration": -18,
                             "src": "1301:7:0",
                             "typeDescriptions": {
@@ -1448,9 +1421,7 @@
                         "src": "1301:82:0"
                       },
                       {
-                        "assignments": [
-                          119
-                        ],
+                        "assignments": [119],
                         "declarations": [
                           {
                             "constant": false,
@@ -1473,9 +1444,7 @@
                               "pathNode": {
                                 "id": 117,
                                 "name": "Shipment",
-                                "nameLocations": [
-                                  "1394:8:0"
-                                ],
+                                "nameLocations": ["1394:8:0"],
                                 "nodeType": "IdentifierPath",
                                 "referencedDeclaration": 27,
                                 "src": "1394:8:0"
@@ -2293,9 +2262,7 @@
                     "src": "2109:529:0",
                     "statements": [
                       {
-                        "assignments": [
-                          172
-                        ],
+                        "assignments": [172],
                         "declarations": [
                           {
                             "constant": false,
@@ -2318,9 +2285,7 @@
                               "pathNode": {
                                 "id": 170,
                                 "name": "Shipment",
-                                "nameLocations": [
-                                  "2119:8:0"
-                                ],
+                                "nameLocations": ["2119:8:0"],
                                 "nodeType": "IdentifierPath",
                                 "referencedDeclaration": 27,
                                 "src": "2119:8:0"
@@ -2517,10 +2482,7 @@
                             "id": 177,
                             "name": "require",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -18,
-                              -18
-                            ],
+                            "overloadedDeclarations": [-18, -18],
                             "referencedDeclaration": -18,
                             "src": "2179:7:0",
                             "typeDescriptions": {
@@ -2656,10 +2618,7 @@
                             "id": 188,
                             "name": "require",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -18,
-                              -18
-                            ],
+                            "overloadedDeclarations": [-18, -18],
                             "referencedDeclaration": -18,
                             "src": "2255:7:0",
                             "typeDescriptions": {
@@ -2794,10 +2753,7 @@
                             "id": 197,
                             "name": "require",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -18,
-                              -18
-                            ],
+                            "overloadedDeclarations": [-18, -18],
                             "referencedDeclaration": -18,
                             "src": "2347:7:0",
                             "typeDescriptions": {
@@ -3187,9 +3143,7 @@
                     "src": "2703:782:0",
                     "statements": [
                       {
-                        "assignments": [
-                          238
-                        ],
+                        "assignments": [238],
                         "declarations": [
                           {
                             "constant": false,
@@ -3212,9 +3166,7 @@
                               "pathNode": {
                                 "id": 236,
                                 "name": "Shipment",
-                                "nameLocations": [
-                                  "2713:8:0"
-                                ],
+                                "nameLocations": ["2713:8:0"],
                                 "nodeType": "IdentifierPath",
                                 "referencedDeclaration": 27,
                                 "src": "2713:8:0"
@@ -3411,10 +3363,7 @@
                             "id": 243,
                             "name": "require",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -18,
-                              -18
-                            ],
+                            "overloadedDeclarations": [-18, -18],
                             "referencedDeclaration": -18,
                             "src": "2773:7:0",
                             "typeDescriptions": {
@@ -3550,10 +3499,7 @@
                             "id": 254,
                             "name": "require",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -18,
-                              -18
-                            ],
+                            "overloadedDeclarations": [-18, -18],
                             "referencedDeclaration": -18,
                             "src": "2849:7:0",
                             "typeDescriptions": {
@@ -3688,10 +3634,7 @@
                             "id": 263,
                             "name": "require",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -18,
-                              -18
-                            ],
+                            "overloadedDeclarations": [-18, -18],
                             "referencedDeclaration": -18,
                             "src": "2940:7:0",
                             "typeDescriptions": {
@@ -3796,10 +3739,7 @@
                             "id": 272,
                             "name": "require",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -18,
-                              -18
-                            ],
+                            "overloadedDeclarations": [-18, -18],
                             "referencedDeclaration": -18,
                             "src": "3038:7:0",
                             "typeDescriptions": {
@@ -4660,9 +4600,7 @@
                           "pathNode": {
                             "id": 334,
                             "name": "Shipment",
-                            "nameLocations": [
-                              "3559:8:0"
-                            ],
+                            "nameLocations": ["3559:8:0"],
                             "nodeType": "IdentifierPath",
                             "referencedDeclaration": 27,
                             "src": "3559:8:0"
@@ -4692,9 +4630,7 @@
                     "src": "3694:236:0",
                     "statements": [
                       {
-                        "assignments": [
-                          354
-                        ],
+                        "assignments": [354],
                         "declarations": [
                           {
                             "constant": false,
@@ -4718,9 +4654,7 @@
                                 "pathNode": {
                                   "id": 351,
                                   "name": "Shipment",
-                                  "nameLocations": [
-                                    "3704:8:0"
-                                  ],
+                                  "nameLocations": ["3704:8:0"],
                                   "nodeType": "IdentifierPath",
                                   "referencedDeclaration": 27,
                                   "src": "3704:8:0"
@@ -4799,9 +4733,7 @@
                                 "pathNode": {
                                   "id": 355,
                                   "name": "Shipment",
-                                  "nameLocations": [
-                                    "3741:8:0"
-                                  ],
+                                  "nameLocations": ["3741:8:0"],
                                   "nodeType": "IdentifierPath",
                                   "referencedDeclaration": 27,
                                   "src": "3741:8:0"
@@ -5026,9 +4958,7 @@
                         },
                         "id": 385,
                         "initializationExpression": {
-                          "assignments": [
-                            364
-                          ],
+                          "assignments": [364],
                           "declarations": [
                             {
                               "constant": false,
@@ -5174,9 +5104,7 @@
                             "pathNode": {
                               "id": 345,
                               "name": "Shipment",
-                              "nameLocations": [
-                                "3675:8:0"
-                              ],
+                              "nameLocations": ["3675:8:0"],
                               "nodeType": "IdentifierPath",
                               "referencedDeclaration": 27,
                               "src": "3675:8:0"
@@ -5348,9 +5276,7 @@
                     "src": "4152:634:0",
                     "statements": [
                       {
-                        "assignments": [
-                          411
-                        ],
+                        "assignments": [411],
                         "declarations": [
                           {
                             "constant": false,
@@ -5745,9 +5671,7 @@
                         },
                         "id": 448,
                         "initializationExpression": {
-                          "assignments": [
-                            415
-                          ],
+                          "assignments": [415],
                           "declarations": [
                             {
                               "constant": false,
@@ -5834,9 +5758,7 @@
                         "src": "4186:210:0"
                       },
                       {
-                        "assignments": [
-                          453
-                        ],
+                        "assignments": [453],
                         "declarations": [
                           {
                             "constant": false,
@@ -5860,9 +5782,7 @@
                                 "pathNode": {
                                   "id": 450,
                                   "name": "Shipment",
-                                  "nameLocations": [
-                                    "4406:8:0"
-                                  ],
+                                  "nameLocations": ["4406:8:0"],
                                   "nodeType": "IdentifierPath",
                                   "referencedDeclaration": 27,
                                   "src": "4406:8:0"
@@ -5926,9 +5846,7 @@
                                 "pathNode": {
                                   "id": 454,
                                   "name": "Shipment",
-                                  "nameLocations": [
-                                    "4437:8:0"
-                                  ],
+                                  "nameLocations": ["4437:8:0"],
                                   "nodeType": "IdentifierPath",
                                   "referencedDeclaration": 27,
                                   "src": "4437:8:0"
@@ -5969,9 +5887,7 @@
                         "src": "4406:48:0"
                       },
                       {
-                        "assignments": [
-                          462
-                        ],
+                        "assignments": [462],
                         "declarations": [
                           {
                             "constant": false,
@@ -6484,9 +6400,7 @@
                         },
                         "id": 509,
                         "initializationExpression": {
-                          "assignments": [
-                            466
-                          ],
+                          "assignments": [466],
                           "declarations": [
                             {
                               "constant": false,
@@ -6661,9 +6575,7 @@
                             "pathNode": {
                               "id": 405,
                               "name": "Shipment",
-                              "nameLocations": [
-                                "4133:8:0"
-                              ],
+                              "nameLocations": ["4133:8:0"],
                               "nodeType": "IdentifierPath",
                               "referencedDeclaration": 27,
                               "src": "4133:8:0"
@@ -6698,12 +6610,7 @@
               "scope": 515,
               "src": "58:4730:0",
               "usedErrors": [],
-              "usedEvents": [
-                53,
-                63,
-                73,
-                83
-              ]
+              "usedEvents": [53, 63, 73, 83]
             }
           ],
           "src": "32:4757:0"
