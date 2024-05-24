@@ -42,10 +42,15 @@ export class ShipmentsTableComponent implements OnInit {
     this.getShipmentList();
   }
 
-  async getShipmentList() {
+  async getShipmentList(getallData = false) {
     try {
       this.loading = true;
-      this.shipments = await this.trackingService.getShipmentsByAddress();
+
+      if (getallData) {
+        this.shipments = await this.trackingService.getAllShipments();
+      } else {
+        this.shipments = await this.trackingService.getShipmentsByAddress();
+      }
     } catch (error) {
       this.messageService.add({
         severity: 'error',
@@ -55,6 +60,29 @@ export class ShipmentsTableComponent implements OnInit {
       console.error('Error fetching shipments', error);
     } finally {
       this.loading = false;
+      this.shipments = [
+        ...this.shipments,
+        ...this.shipments,
+        ...this.shipments,
+        ...this.shipments,
+        ...this.shipments,
+        ...this.shipments,
+        ...this.shipments,
+        ...this.shipments,
+        ...this.shipments,
+        ...this.shipments,
+        ...this.shipments,
+        ...this.shipments,
+        ...this.shipments,
+        ...this.shipments,
+        ...this.shipments,
+        ...this.shipments,
+        ...this.shipments,
+        ...this.shipments,
+        ...this.shipments,
+        ...this.shipments,
+        ...this.shipments,
+      ];
       this.cdr.detectChanges();
     }
   }
