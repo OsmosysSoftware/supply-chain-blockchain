@@ -1,30 +1,45 @@
-<p-table [value]="shipments" responsiveLayout="scroll" [resizableColumns]="true">
+<p-table
+  [value]="shipments"
+  styleClass="p-datatable-gridlines"
+  [resizableColumns]="true"
+  [scrollable]="true"
+  scrollHeight="800px"
+>
   <ng-template pTemplate="caption">
     <div class="flex align-items-center justify-content-between">
       Shipments
-      <p-button icon="pi pi-refresh" (onClick)="getShipmentList()" [loading]="loading" />
+      <div>
+        <p-button icon="pi pi-refresh" (onClick)="getShipmentList()" [loading]="loading" />
+        <p-button
+          label="Get All Data"
+          class="ml-2"
+          severity="success"
+          (onClick)="getShipmentList(true)"
+          [loading]="loading"
+        />
+      </div>
     </div>
   </ng-template>
   <ng-template pTemplate="header">
     <tr>
-      <th>Shipment ID</th>
-      <th>Sender</th>
-      <th>Receiver</th>
-      <th>Package Name</th>
-      <th>Pickup Time</th>
-      <th>Delivery Time</th>
-      <th>Distance (km)</th>
-      <th>Price (ETH)</th>
-      <th>Status</th>
-      <th>Paid</th>
-      <th>Actions</th>
+      <th pResizableColumn>Shipment ID</th>
+      <th pResizableColumn>Sender</th>
+      <th pResizableColumn>Receiver</th>
+      <th pResizableColumn>Package Name</th>
+      <th pResizableColumn>Pickup Time</th>
+      <th pResizableColumn>Delivery Time</th>
+      <th pResizableColumn>Distance (km)</th>
+      <th pResizableColumn>Price (ETH)</th>
+      <th pResizableColumn>Status</th>
+      <th pResizableColumn>Paid</th>
+      <th pResizableColumn>Actions</th>
     </tr>
   </ng-template>
   <ng-template pTemplate="body" let-shipment let-i="rowIndex">
     <tr>
       <td>{{ shipment.packageId }}</td>
-      <td>{{ shipment.sender }}</td>
-      <td>{{ shipment.receiver }}</td>
+      <td class="text-overflow-ellipsis">{{ shipment.sender }}</td>
+      <td class="text-overflow-ellipsis">{{ shipment.receiver }}</td>
       <td>{{ shipment.packageName }}</td>
       <td>{{ shipment.pickupTime | date: 'medium' }}</td>
       <td>{{ shipment.deliveryTime ? (shipment.deliveryTime | date: 'medium') : 'N/A' }}</td>
