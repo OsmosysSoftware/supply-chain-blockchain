@@ -1,6 +1,7 @@
 <p-table
   [value]="shipments"
   styleClass="p-datatable-gridlines"
+  [tableStyle]="{ 'table-layout': 'fixed' }"
   [resizableColumns]="true"
   [scrollable]="true"
   scrollHeight="800px"
@@ -37,24 +38,29 @@
   </ng-template>
   <ng-template pTemplate="body" let-shipment let-i="rowIndex">
     <tr>
-      <td>{{ shipment.packageId }}</td>
+      <td class="white-space-normal">{{ shipment.packageId }}</td>
       <td class="text-overflow-ellipsis">{{ shipment.sender }}</td>
       <td class="text-overflow-ellipsis">{{ shipment.receiver }}</td>
-      <td>{{ shipment.packageName }}</td>
-      <td>{{ shipment.pickupTime | date: 'medium' }}</td>
-      <td>{{ shipment.deliveryTime ? (shipment.deliveryTime | date: 'medium') : 'N/A' }}</td>
-      <td>{{ shipment.distance }}</td>
-      <td>{{ shipment.price }}</td>
-      <td>
+      <td class="white-space-normal">{{ shipment.packageName }}</td>
+      <td class="white-space-normal">{{ shipment.pickupTime | date: 'medium' }}</td>
+      <td class="white-space-normal">
+        {{ shipment.deliveryTime ? (shipment.deliveryTime | date: 'medium') : 'N/A' }}
+      </td>
+      <td class="white-space-normal">{{ shipment.distance }}</td>
+      <td class="white-space-normal text-right">
+        {{ shipment.price | number: '1.2-2' }}
+      </td>
+
+      <td class="white-space-normal">
         <p-tag [value]="shipment.status" [severity]="getStatusSeverity(shipment.status)"></p-tag>
       </td>
-      <td>
+      <td class="white-space-normal">
         <p-tag
           [value]="shipment.isPaid ? 'Yes' : 'No'"
           [severity]="getPaidSeverity(shipment.isPaid)"
         ></p-tag>
       </td>
-      <td>
+      <td class="white-space-normal">
         <ng-container *ngIf="shipment.status === 'Pending'">
           <p-button
             label="Start"
