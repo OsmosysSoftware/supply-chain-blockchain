@@ -60,29 +60,6 @@ export class ShipmentsTableComponent implements OnInit {
       console.error('Error fetching shipments', error);
     } finally {
       this.loading = false;
-      this.shipments = [
-        ...this.shipments,
-        ...this.shipments,
-        ...this.shipments,
-        ...this.shipments,
-        ...this.shipments,
-        ...this.shipments,
-        ...this.shipments,
-        ...this.shipments,
-        ...this.shipments,
-        ...this.shipments,
-        ...this.shipments,
-        ...this.shipments,
-        ...this.shipments,
-        ...this.shipments,
-        ...this.shipments,
-        ...this.shipments,
-        ...this.shipments,
-        ...this.shipments,
-        ...this.shipments,
-        ...this.shipments,
-        ...this.shipments,
-      ];
       this.cdr.detectChanges();
     }
   }
