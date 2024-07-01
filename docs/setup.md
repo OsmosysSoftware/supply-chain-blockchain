@@ -11,7 +11,7 @@ Before setting up for development, ensure you have the following prerequisites w
 - **Git:** Git v2.x or higher.
 - **MetaMask:** Chrome Extension to interact with web3 application.
 
-These prerequisites are essential for deploying and running application in an environment.
+These prerequisites are essential for deploying and running the application in an environment.
 
 Please make sure to have these versions installed on your development server before proceeding with the setup.
 
@@ -58,7 +58,7 @@ Please make sure to have these versions installed on your development server bef
    ng serve
    ```
 
-   keep the hardhat node runnig in separate terminal
+   keep the hardhat node running in a separate terminal
 
    Application will now be running locally at `http://localhost:4200/`.
 
