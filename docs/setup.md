@@ -37,7 +37,7 @@ Please make sure to have these versions installed on your development server bef
 
 4. Import Account into metamask
 
-   - When you run the command mentioned in step 3 you will get list of 20 account with private key
+   - When you run the command mentioned in step 3 you will get a list of 20 accounts with private keys
    - Import 2-3 account using the private key of that account
    - Check this for reference : [Import Account](https://support.metamask.io/hc/en-us/articles/360015489331-How-to-import-an-account)
    - Make sure you Import Account #0 as by default when you deploy any contract it is used
