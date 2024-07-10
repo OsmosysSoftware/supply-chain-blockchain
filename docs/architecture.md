@@ -8,6 +8,33 @@ This document provides an overview of the architecture of our blockchain project
 
 ![Architecture diagram](./images/blockchain.drawio.png)
 
+<details>
+<summary>Why Use blockchain in this project?</summary>
+
+### Supply Chain System
+
+In our supply chain management system, we track product statuses such as transit, delivery, and payment. Each transaction, such as payment for delivery, is recorded as a smart contract on the blockchain. Here’s why we use blockchain for this:
+
+- **Transparency**: Every stakeholder can view the entire transaction history, ensuring transparency.
+- **Immutability**: Once recorded, data cannot be altered, providing an auditable trail of events.
+- **Smart Contracts**: Automation of transactions based on predefined conditions (e.g., automatic payment release upon delivery confirmation).
+- **Security**: Enhanced security against fraud and tampering compared to traditional centralized systems.
+- **Efficiency**: Streamlined processes and reduced paperwork, leading to faster transactions.
+
+### Benefits Over Traditional Systems
+
+Blockchain technology offers significant advantages over traditional database systems in supply chain management:
+
+- **Decentralization**: Eliminates the need for a central authority, reducing dependency and single points of failure.
+- **Trust**: Builds trust among participants through transparent and verifiable transactions.
+- **Cost Reduction**: Reduces costs associated with intermediaries, paperwork, and reconciliation.
+- **Auditing**: Facilitates easy auditing and compliance with regulations due to transparent and immutable records.
+- **Dispute Resolution**: Simplifies dispute resolution by providing a clear record of transactions.
+
+</details>
+</details>
+
+
 ## Components
 
 ### 1. Frontend (Angular)
